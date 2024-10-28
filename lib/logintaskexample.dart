@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstapp/filename.dart';
-import 'package:myfirstapp/hometaskscreen.dart';
+import 'package:myfirstapp/firstscreenexample.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginExample extends StatefulWidget {
@@ -42,7 +41,7 @@ class _LoginExampleState extends State<LoginExample> {
 
           pref.setString("loginStatus", "1");
           Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => DashboardClass()),
+            MaterialPageRoute(builder: (context) => HomePage()),
           );
 
           //  print("---sign in-----" +data.toString());

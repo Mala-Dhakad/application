@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:myfirstapp/splaceScreen.dart';
-
-
-
+import 'package:myfirstapp/splacescreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Ensure bindings are initialized
@@ -22,21 +19,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue, // App theme
       ),
 
-      home:SplaceScreen(), // Home page of your app SharedPreferencesExample
+      home:SplaceScreen(),
     );
   }
 }
 
 
 
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'), // AppBar title
-      ),
 
-    );
-  }
-}
+
+

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:myfirstapp/filename.dart';
+import 'package:myfirstapp/firstscreenexample.dart';
 import 'package:myfirstapp/logintaskexample.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -26,7 +26,7 @@ class _SplacescreenState extends State<SplaceScreen> {
      Timer(
          Duration(seconds: 3),
              () => Navigator.pushReplacement(
-             context, MaterialPageRoute(builder: (context) => DashboardClass())));
+             context, MaterialPageRoute(builder: (context) => HomePage())));
 
    }
 
