@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -68,11 +69,22 @@ class _EditProductPageState extends State<EditProductPage> {
             TextField(
               controller: _nameController,
               decoration: InputDecoration(labelText: 'Product Name'),
+              textInputAction: TextInputAction.next,
+              keyboardType: TextInputType.text,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.allow(
+                    RegExp("[a-zA-Z ]")),
+              ],
             ),
             TextField(
               controller: _priceController,
               decoration: InputDecoration(labelText: 'Price'),
+              textInputAction: TextInputAction.next,
               keyboardType: TextInputType.number,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.allow(
+                    RegExp("[0-9]")),
+              ],
             ),
             SizedBox(height: 16),
             if (_imagePath != null)

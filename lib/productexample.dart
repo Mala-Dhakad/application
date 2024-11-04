@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
@@ -75,6 +76,12 @@ class _AddProductPageState extends State<AddProductPage> {
           children: [
             TextField(
               controller: _nameController,
+              textInputAction: TextInputAction.next,
+              keyboardType: TextInputType.text,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.allow(
+                    RegExp("[a-zA-Z ]")),
+              ],
               decoration: InputDecoration(labelText: 'Product Name',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20.0), // Border radius set karna
@@ -85,12 +92,18 @@ class _AddProductPageState extends State<AddProductPage> {
             SizedBox(height: 20,),
             TextField(
               controller: _priceController,
+              textInputAction: TextInputAction.next,
+              keyboardType: TextInputType.number,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.allow(
+                    RegExp("[0-9]")),
+              ],
               decoration: InputDecoration(labelText: 'Price',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20.0), // Border radius set karna
                   borderSide: BorderSide(color: Colors.blue), // Border color
                 ),),
-              keyboardType: TextInputType.number,
+
             ),
             SizedBox(height: 16),
             _imagePath == null
